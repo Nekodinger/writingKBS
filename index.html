@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>English Writing Assessment</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<div class="topbar"><b>English Writing Assessment</b><span id="modeLabel"></span></div>
+<main class="container">
+<section id="login" class="card">
+<h1>Student Login</h1><label>Student ID</label><input id="studentId" autocomplete="off">
+<label>Access Code</label><input id="accessCode" type="password" autocomplete="off">
+<button id="loginBtn">Start Assessment</button><p id="loginMsg"></p>
+</section>
+
+<section id="studentApp" class="hidden">
+<div class="examHead card"><div><h1 id="assessmentTitle"></h1><p id="studentInfo"></p></div><div id="timer" class="timer">--:--</div></div>
+<div id="security" class="security">LOCKDOWN / INTEGRITY MONITORING ACTIVE</div>
+<div id="studentQuestions"></div>
+<button id="submitBtn" class="submit">Submit Assessment</button><p id="studentMsg"></p>
+</section>
+
+<section id="teacherApp" class="hidden">
+<div class="card"><h1>Teacher Panel</h1>
+<div class="grid">
+<div><label>Assessment</label><select id="assessmentSelect"></select></div>
+<div><label>Auto-refresh</label><button id="refreshBtn">Refresh Now</button></div>
+</div></div>
+<div class="card"><h2>Progress</h2><div id="progressTable"></div></div>
+<div class="card"><h2>Assessment Settings</h2>
+<label>Assessment Title</label><input id="aTitle">
+<label>Duration (minutes)</label><input id="aDuration" type="number">
+<label>Google Docs Template ID</label><input id="aTemplate">
+<label>Google Drive Output Folder ID</label><input id="aFolder">
+<label>Teacher Email</label><input id="aTeacherEmail">
+<button id="saveSettings">Save Settings</button><p id="teacherMsg"></p></div>
+<div class="card"><h2>Google Docs Templates</h2><p>Manage template IDs per assessment. The backend creates a copy only after submission and gives the teacher Viewer access.</p></div>
+</section>
+
+<section id="finish" class="card hidden center"><h1>✓ Submitted</h1><p>Your English writing assessment has been submitted.</p><p>You may now close this page.</p></section>
+</main>
+<script src="js/config.js"></script><script src="js/api.js"></script><script src="js/security.js"></script><script src="js/app.js"></script>
+</body></html>

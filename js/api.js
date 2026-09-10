@@ -1,0 +1,1 @@
+async function api(action,payload={}){const r=await fetch(API_URL,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({action,...payload})});if(!r.ok)throw new Error("Server request failed");return r.json();}
